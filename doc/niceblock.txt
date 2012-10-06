@@ -1,0 +1,143 @@
+*niceblock.txt*	Make blockwise Visual mode more useful
+
+Version 0.0.0
+Script ID: ****
+Copyright (C) 2012 Kana Natsuno <http://whileimautomaton.net/>
+License: So-called MIT/X license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+CONTENTS					*niceblock-contents*
+
+Introduction            |niceblock-introduction|
+Interface               |niceblock-interface|
+  Key Mappings            |niceblock-key-mappings|
+Bugs                    |niceblock-bugs|
+Changelog               |niceblock-changelog|
+
+
+
+
+==============================================================================
+INTRODUCTION					*niceblock-introduction*
+
+*niceblock* is a Vim plugin to make blockwise Visual mode, especially
+Visual-block Inserting/Appending, more useful.  Suppose that you want to
+comment out a code snippet.  There are various ways to do so.  One is to do
+the following steps:
+
+(1) Start Visual mode with |v|;
+(2) Select a code block by |ip|;
+(3) Make Visual mode blockwise by |v_CTRL-V|;
+(4) Insert a comment character for each selected line by |v_b_I|;
+
+It's a useful combination to edit text, but there are a few problems:
+
+(a) We have to |v_CTRL-V| to make Visual mode blockwise,
+    because |v_b_I| and |v_b_A| are available only in blockwise Visual mode.
+    It is not intuitive; why are not they available in all kinds of Visual
+    mode?
+(b) Selected area often becomes unsuitable to immediately |v_b_I| and |v_b_A|
+    after switching to blockwise Visual mode from linewise one.
+    Because column positions don't matter in linewise Visual mode,
+    while they matter in blockwise Visual mode.  So that we often have to
+    adjust cursor positions after |v_CTRL-V|.  It would be better to automate
+    such adjustments, wouldn't it?
+
+This plugin changes the behavior of I and A in Visual mode to:
+
+* Make |v_b_I| and |v_b_A| available in all kinds of Visual mode.
+* Adjust the selected area to be intuitive before doing blockwise insertion
+  from linewise Visual mode.
+
+Both just save a few key types.  For example, you can type:
+
+* "vipI# <Esc>" instead of "vip<C-v>0I# <Esc>".
+* "vipA++<Esc>" instead of "vip<C-v>$A++<Esc>".
+
+But the effect is significant.  It makes blockwise Visual mode more useful and
+intuitive.
+
+
+Requirements:
+- Vim 7.3 or later
+
+Latest version:
+http://github.com/kana/vim-niceblock
+
+Document in HTML format:
+http://vim-doc.heroku.com/view?https://github.com/kana/vim-niceblock/blob/master/doc/niceblock.txt
+
+
+
+
+==============================================================================
+INTERFACE					*niceblock-interface*
+
+------------------------------------------------------------------------------
+KEY MAPPINGS					*niceblock-key-mappings*
+
+DEFAULT KEY MAPPINGS				*niceblock-default-key-mappings*
+
+Modes	{lhs}		{rhs}
+------------------------------------------------
+v	I		|<Plug>(niceblock-I)|
+v	A		|<Plug>(niceblock-A)|
+
+
+NAMED KEY MAPPINGS				*niceblock-named-key-mappings*
+
+<Plug>(niceblock-I)				*<Plug>(niceblock-I)*
+			Like |v_b_I|, but:
+			
+			* It's available in all kinds of Visual mode.
+			* It adjusts the selected area to get intuitive result
+			  after blockwise insertion if the current mode is not
+			  blockwise.
+
+<Plug>(niceblock-A)				*<Plug>(niceblock-A)*
+			Like |<Plug>(niceblock-I)|, but it's corresponding to
+			|v_b_A| instead of |v_b_I|.
+
+
+
+
+==============================================================================
+BUGS						*niceblock-bugs*
+
+- Currently there is no known issues.
+
+- If you find any problem or have any suggestion, please report to:
+  https://github.com/kana/vim-niceblock/issues
+
+
+
+
+==============================================================================
+CHANGELOG					*niceblock-changelog*
+
+0.0.0	2012-10-06T14:16:49+09:00		*niceblock-changelog-0.0.0*
+	- Initial version.
+
+
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:fen:fdl=0:fdm=marker:
