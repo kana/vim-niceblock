@@ -61,8 +61,8 @@ describe 'Mapping'
       execute 'normal' "2GVjoIXYZ\<Esc>"
       Expect getline(1, '$') ==# [
       \   'foo',
-      \   'XYZ  bar',
-      \   'XYZ  baz',
+      \   '  XYZbar',
+      \   '  XYZbaz',
       \   'qux',
       \ ]
     end
