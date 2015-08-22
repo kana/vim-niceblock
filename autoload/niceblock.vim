@@ -26,14 +26,13 @@
 
 
 function! niceblock#force_blockwise(next_key)
-  if mode() ==# 'v'
-    return "\<C-v>" . a:next_key
-  elseif mode() ==# 'V'
-    return "\<C-v>0o$" . a:next_key
-  else  " mode() ==# "\<C-v>"
-    return a:next_key
-  endif
+  return s:setup_keyseq_table[a:next_key][mode()]
 endfunction
+
+let s:setup_keyseq_table = {
+\   'I': {'v': "\<C-v>I", 'V': "\<C-v>0o$I", "\<C-v>": 'I'},
+\   'A': {'v': "\<C-v>A", 'V': "\<C-v>0o$A", "\<C-v>": 'A'},
+\ }
 
 
 
