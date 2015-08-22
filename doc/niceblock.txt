@@ -78,7 +78,7 @@ Requirements:
 - Vim 7.3 or later
 
 Latest version:
-http://github.com/kana/vim-niceblock
+https://github.com/kana/vim-niceblock
 
 Document in HTML format:
 http://vim-doc.heroku.com/view?https://github.com/kana/vim-niceblock/blob/master/doc/niceblock.txt
