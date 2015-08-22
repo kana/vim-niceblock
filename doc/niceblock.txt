@@ -40,7 +40,7 @@ INTRODUCTION					*niceblock-introduction*
 
 *niceblock* is a Vim plugin to make blockwise Visual mode, especially
 Visual-block Inserting/Appending, more useful.  Suppose that you want to
-comment out a code snippet.  There are various ways to do so.  One is to do
+comment out a code block.  There are various ways to do so.  One way is to do
 the following steps:
 
 (1) Start Visual mode with |v|;
@@ -50,22 +50,20 @@ the following steps:
 
 It's a useful combination to edit text, but there are a few problems:
 
-(a) We have to |v_CTRL-V| to make Visual mode blockwise,
+(a) You have to |v_CTRL-V| to make Visual mode blockwise,
     because |v_b_I| and |v_b_A| are available only in blockwise Visual mode.
-    It is not intuitive; why are not they available in all kinds of Visual
-    mode?
-(b) Selected area often becomes unsuitable to immediately |v_b_I| and |v_b_A|
-    after switching to blockwise Visual mode from linewise one.
+    Why are not they available in all kinds of Visual mode?
+(b) Selected area often becomes unsuitable to |v_b_I| and |v_b_A|
+    after switching from linewise Visual mode to blockwise Visual mode.
     Because column positions don't matter in linewise Visual mode,
-    while they matter in blockwise Visual mode.  So that we often have to
+    while they matter in blockwise Visual mode.  So that you often have to
     adjust cursor positions after |v_CTRL-V|.  It would be better to automate
     such adjustments, wouldn't it?
 
 This plugin changes the behavior of I and A in Visual mode to:
 
 * Make |v_b_I| and |v_b_A| available in all kinds of Visual mode.
-* Adjust the selected area to be intuitive before doing blockwise insertion
-  from linewise Visual mode.
+* Adjust the selected area to be intuitive before doing blockwise insertion.
 
 Both just save a few key types.  For example, you can type:
 
@@ -117,8 +115,8 @@ NAMED KEY MAPPINGS				*niceblock-named-key-mappings*
 
 <Plug>(niceblock-gI)				*<Plug>(niceblock-gI)*
                         Like |<Plug>(niceblock-I)|, but it behaves like |gI|
-                        in Normal mode.  So that text is always inserted at
-                        the first column.
+                        in Normal mode.  Text is always inserted before the
+                        first column.
 
 <Plug>(niceblock-A)				*<Plug>(niceblock-A)*
 			Like |<Plug>(niceblock-I)|, but it's corresponding to
@@ -130,7 +128,7 @@ NAMED KEY MAPPINGS				*niceblock-named-key-mappings*
 ==============================================================================
 BUGS						*niceblock-bugs*
 
-- Currently there is no known issues.
+- Currently there are no known issues.
 
 - If you find any problem or have any suggestion, please report to:
   https://github.com/kana/vim-niceblock/issues
