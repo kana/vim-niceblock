@@ -48,6 +48,68 @@ describe 'Mapping'
     end
   end
 
+  describe '<Plug>(niceblock-gI)'
+    it 'works in characterwise Visual mode (1)'
+      execute 'normal' "lvjjlgIXYZ\<Esc>"
+      Expect getline(1, '$') ==# [
+      \   'XYZfoo',
+      \   'XYZ  bar',
+      \   'XYZ  baz',
+      \   'qux',
+      \ ]
+    end
+
+    it 'works in characterwise Visual mode (2)'
+      execute 'normal' "jjllvkkgIXYZ\<Esc>"
+      Expect getline(1, '$') ==# [
+      \   'XYZfoo',
+      \   'XYZ  bar',
+      \   'XYZ  baz',
+      \   'qux',
+      \ ]
+    end
+
+    it 'works in linewise Visual mode (1)'
+      execute 'normal' "VjgIXYZ\<Esc>"
+      Expect getline(1, '$') ==# [
+      \   'XYZfoo',
+      \   'XYZ  bar',
+      \   '  baz',
+      \   'qux',
+      \ ]
+    end
+
+    it 'works in linewise Visual mode (2)'
+      execute 'normal' "jVkgIXYZ\<Esc>"
+      Expect getline(1, '$') ==# [
+      \   'XYZfoo',
+      \   'XYZ  bar',
+      \   '  baz',
+      \   'qux',
+      \ ]
+    end
+
+    it 'works in blockwise Visual mode (1)'
+      execute 'normal' "lj\<C-v>jjlgIXYZ\<Esc>"
+      Expect getline(1, '$') ==# [
+      \   'foo',
+      \   'XYZ  bar',
+      \   'XYZ  baz',
+      \   'XYZqux',
+      \ ]
+    end
+
+    it 'works in blockwise Visual mode (2)'
+      execute 'normal' "lljj\<C-v>hkkgIXYZ\<Esc>"
+      Expect getline(1, '$') ==# [
+      \   'XYZfoo',
+      \   'XYZ  bar',
+      \   'XYZ  baz',
+      \   'qux',
+      \ ]
+    end
+  end
+
   describe '<Plug>(niceblock-A)'
     it 'works in characterwise Visual mode'
       execute 'normal' "lvjjllAXYZ\<Esc>"
