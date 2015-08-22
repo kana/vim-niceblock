@@ -99,6 +99,7 @@ DEFAULT KEY MAPPINGS				*niceblock-default-key-mappings*
 Modes	{lhs}		{rhs}
 ------------------------------------------------
 v	I		|<Plug>(niceblock-I)|
+v	gI		|<Plug>(niceblock-gI)|
 v	A		|<Plug>(niceblock-A)|
 
 
@@ -111,6 +112,11 @@ NAMED KEY MAPPINGS				*niceblock-named-key-mappings*
 			* It adjusts the selected area to get intuitive result
 			  after blockwise insertion if the current mode is not
 			  blockwise.
+
+<Plug>(niceblock-gI)				*<Plug>(niceblock-gI)*
+                        Like |<Plug>(niceblock-I)|, but it behaves like |gI|
+                        in Normal mode.  So that text is always inserted at
+                        the first column.
 
 <Plug>(niceblock-A)				*<Plug>(niceblock-A)*
 			Like |<Plug>(niceblock-I)|, but it's corresponding to
