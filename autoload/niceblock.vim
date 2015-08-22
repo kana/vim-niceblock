@@ -1,7 +1,7 @@
 " niceblock - Make blockwise Visual mode more useful
 " Version: 0.0.0
 " Copyright (C) 2012 Kana Natsuno <http://whileimautomaton.net/>
-" License: So-called MIT/X license  {{{
+" License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the
 "     "Software"), to deal in the Software without restriction, including
