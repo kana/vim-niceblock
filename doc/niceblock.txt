@@ -136,6 +136,12 @@ BUGS						*niceblock-bugs*
 ==============================================================================
 CHANGELOG					*niceblock-changelog*
 
+0.1.0	2015-08-22T14:19:54+09:00		*niceblock-changelog-0.1.0*
+        - Add |<Plug>(niceblock-gI)| which behaves like |gI|.
+        - Change the behavior of |<Plug>(niceblock-I)| in linewise Visual
+          mode.  Now text will be inserted before the first non-blank column.
+          It is more useful to edit an indented block of text.
+
 0.0.0	2012-10-06T14:16:49+09:00		*niceblock-changelog-0.0.0*
 	- Initial version.
 
