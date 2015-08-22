@@ -80,9 +80,6 @@ Requirements:
 Latest version:
 https://github.com/kana/vim-niceblock
 
-Document in HTML format:
-http://vim-doc.heroku.com/view?https://github.com/kana/vim-niceblock/blob/master/doc/niceblock.txt
-
 
 
 
