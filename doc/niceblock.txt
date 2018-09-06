@@ -1,8 +1,8 @@
 *niceblock.txt*	Make blockwise Visual mode more useful
 
-Version 0.1.0
+Version 0.2.0
 Script ID: ****
-Copyright (C) 2012-2015 Kana Natsuno <http://whileimautomaton.net/>
+Copyright (C) 2012-2018 Kana Natsuno <https://whileimautomaton.net/>
 License: MIT license  {{{
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
@@ -145,6 +145,9 @@ BUGS						*niceblock-bugs*
 
 ==============================================================================
 CHANGELOG					*niceblock-changelog*
+
+0.2.0	2018-09-06T21:45:06+09:00		*niceblock-changelog-0.2.0*
+        - Add |g:niceblock_no_default_key_mappings|.
 
 0.1.0	2015-08-22T14:19:54+09:00		*niceblock-changelog-0.1.0*
         - Add |<Plug>(niceblock-gI)| which behaves like |gI|.
