@@ -33,9 +33,12 @@ vnoremap <expr> <Plug>(niceblock-I)  niceblock#force_blockwise('I')
 vnoremap <expr> <Plug>(niceblock-gI)  niceblock#force_blockwise('gI')
 vnoremap <expr> <Plug>(niceblock-A)  niceblock#force_blockwise('A')
 
-silent! xmap <unique> I  <Plug>(niceblock-I)
-silent! xmap <unique> gI  <Plug>(niceblock-gI)
-silent! xmap <unique> A  <Plug>(niceblock-A)
+if !exists('g:niceblock_no_default_key_mappings') ||
+			\  !g:niceblock_no_default_key_mappings
+	silent! xmap <unique> I  <Plug>(niceblock-I)
+	silent! xmap <unique> gI  <Plug>(niceblock-gI)
+	silent! xmap <unique> A  <Plug>(niceblock-A)
+endif
 
 
 
