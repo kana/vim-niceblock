@@ -124,10 +124,10 @@ NAMED KEY MAPPINGS				*niceblock-named-key-mappings*
 CUSTOMIZATION 					*niceblock-customiztion*
 
 ------------------------------------------------------------------------------
-                                           *g:niceblock_no_default_key_mappings*
+                                         *g:niceblock_no_default_key_mappings*
 Values: 0 or 1.
 Default: 0
-Use |g:niceblock_no_default_key_mappings| to disable default mappings.
+Use |g:niceblock_no_default_key_mappings| to disable default key mappings.
 
 
 
