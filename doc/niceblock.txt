@@ -29,6 +29,7 @@ CONTENTS					*niceblock-contents*
 Introduction            |niceblock-introduction|
 Interface               |niceblock-interface|
   Key Mappings            |niceblock-key-mappings|
+Customization           |niceblock-customization|
 Bugs                    |niceblock-bugs|
 Changelog               |niceblock-changelog|
 
@@ -118,6 +119,15 @@ NAMED KEY MAPPINGS				*niceblock-named-key-mappings*
 <Plug>(niceblock-A)				*<Plug>(niceblock-A)*
 			Like |<Plug>(niceblock-I)|, but it's corresponding to
 			|v_b_A| instead of |v_b_I|.
+
+==============================================================================
+CUSTOMIZATION 					*niceblock-customiztion*
+
+------------------------------------------------------------------------------
+                                         *g:niceblock_no_default_key_mappings*
+Values: 0 or 1.
+Default: 0
+Use |g:niceblock_no_default_key_mappings| to disable default key mappings.
 
 
 
